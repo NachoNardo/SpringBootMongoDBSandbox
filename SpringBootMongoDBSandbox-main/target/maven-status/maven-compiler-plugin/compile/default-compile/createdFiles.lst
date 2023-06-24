@@ -1,0 +1,6 @@
+com\leonardoholanda\SpringBootMongoDBSandbox\service\BookService.class
+com\leonardoholanda\SpringBootMongoDBSandbox\model\Book.class
+com\leonardoholanda\SpringBootMongoDBSandbox\repository\BookRepository.class
+com\leonardoholanda\SpringBootMongoDBSandbox\rest\request\BookRequest.class
+com\leonardoholanda\SpringBootMongoDBSandbox\SpringBootMongoDbSandboxApplication.class
+com\leonardoholanda\SpringBootMongoDBSandbox\rest\controller\BookController.class
