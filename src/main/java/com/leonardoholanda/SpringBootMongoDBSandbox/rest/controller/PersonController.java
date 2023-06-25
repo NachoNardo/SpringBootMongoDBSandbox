@@ -34,14 +34,9 @@ public class PersonController {
 		return personService.save(PersonMapper.requestToModelGenerateId(request));
 	}
 	
-	@PostMapping
+	@PostMapping("/all")
 	public List<Person> save(@Valid @RequestBody List<PersonRequest> request) {
 		return personService.saveAll(PersonMapper.requestsToModelsGenerateId(request));
-	}
-	
-	@GetMapping
-	public List<Person> findAll() {
-		return personService.findAll();
 	}
 	
 	@GetMapping
@@ -49,12 +44,17 @@ public class PersonController {
 		return personService.findById(id);
 	}
 	
+	@GetMapping("/all")
+	public List<Person> findAll() {
+		return personService.findAll();
+	}
+	
 	@PatchMapping
 	public Person update(@Valid @RequestBody PersonIdRequest request) {
 		return personService.update(PersonMapper.requestToModel(request));
 	}
 	
-	@PatchMapping
+	@PatchMapping("/all")
 	public List<Person> updateAll(@Valid @RequestBody List<PersonIdRequest> request) {
 		return personService.updateAll(PersonMapper.requestsToModels(request));
 	}
@@ -65,13 +65,13 @@ public class PersonController {
 		return "{}";
 	}
 
-	@DeleteMapping
+	@DeleteMapping("/all/ids")
 	public String deleteAllById(@RequestBody IdsRequest ids) {
 		personService.deleteAllById(ids.getIds());
 		return "{}";
 	}
 	
-	@DeleteMapping
+	@DeleteMapping("/all")
 	public String deleteAll() {
 		personService.deleteAll();
 		return "{}";
